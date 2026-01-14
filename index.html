@@ -328,8 +328,8 @@
                         Most Popular
                     </div>
                     <div class="text-lg font-medium text-primary mb-2">Pro</div>
-                    <div class="text-4xl font-bold mb-2">$4.99<span class="text-lg font-normal text-gray-400">/month</span></div>
-                    <div class="text-sm text-gray-400 mb-6">or $44.99/year (save 25%)</div>
+                    <div class="text-4xl font-bold mb-2" id="pro-price">$4.99<span class="text-lg font-normal text-gray-400">/month</span></div>
+                    <div class="text-sm text-gray-400 mb-6" id="pro-yearly">or $44.99/year (save 25%)</div>
                     <ul class="space-y-4 mb-8">
                         <li class="flex items-center gap-3">
                             <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -374,8 +374,8 @@
                 </div>
             </div>
 
-            <p class="text-center text-gray-500 text-sm mt-8">
-                Canadian users: Pro is $6.99 CAD/month or $64.99 CAD/year
+            <p class="text-center text-gray-500 text-sm mt-8" id="pricing-note">
+                <span id="country-flag"></span> Prices shown in <span id="currency-name">USD</span>
             </p>
         </div>
     </section>
@@ -470,6 +470,53 @@
             el.style.animationPlayState = 'paused';
             observer.observe(el);
         });
+
+        // Geolocation-based pricing
+        const pricingData = {
+            CA: { 
+                monthly: '$6.99 CAD', 
+                yearly: '$64.99 CAD', 
+                currency: 'CAD',
+                flag: '🇨🇦'
+            },
+            US: { 
+                monthly: '$4.99 USD', 
+                yearly: '$44.99 USD', 
+                currency: 'USD',
+                flag: '🇺🇸'
+            },
+            default: { 
+                monthly: '$4.99 USD', 
+                yearly: '$44.99 USD', 
+                currency: 'USD',
+                flag: '🌎'
+            }
+        };
+
+        async function detectLocationAndUpdatePricing() {
+            try {
+                // Using free ipapi.co service for geolocation
+                const response = await fetch('https://ipapi.co/json/');
+                const data = await response.json();
+                const countryCode = data.country_code || 'US';
+                
+                const pricing = pricingData[countryCode] || pricingData.default;
+                
+                // Update pricing display
+                document.getElementById('pro-price').innerHTML = 
+                    `${pricing.monthly}<span class="text-lg font-normal text-gray-400">/month</span>`;
+                document.getElementById('pro-yearly').textContent = 
+                    `or ${pricing.yearly}/year (save 25%)`;
+                document.getElementById('currency-name').textContent = pricing.currency;
+                document.getElementById('country-flag').textContent = pricing.flag + ' ';
+                
+            } catch (error) {
+                console.log('Geolocation unavailable, using default pricing');
+            }
+        }
+
+        // Run on page load
+        detectLocationAndUpdatePricing();
     </script>
 </body>
 </html>

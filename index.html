@@ -39,9 +39,50 @@
     
     <style>
         html { scroll-behavior: smooth; }
-        .gradient-bg {
-            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+        
+        /* Theme Variables */
+        :root {
+            --bg-primary: #0F172A;
+            --bg-secondary: #1E293B;
+            --bg-card: #1E293B;
+            --text-primary: #FFFFFF;
+            --text-secondary: #94A3B8;
+            --text-muted: #64748B;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --nav-bg: rgba(15, 23, 42, 0.9);
         }
+        
+        [data-theme="light"] {
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F8FAFC;
+            --bg-card: #FFFFFF;
+            --text-primary: #0F172A;
+            --text-secondary: #475569;
+            --text-muted: #94A3B8;
+            --border-color: rgba(0, 0, 0, 0.1);
+            --nav-bg: rgba(255, 255, 255, 0.9);
+        }
+        
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+        
+        .bg-dark { background-color: var(--bg-primary); }
+        .bg-darkLight { background-color: var(--bg-secondary); }
+        .text-white { color: var(--text-primary); }
+        .text-gray-300 { color: var(--text-secondary); }
+        .text-gray-400 { color: var(--text-secondary); }
+        .text-gray-500 { color: var(--text-muted); }
+        .border-white\/10 { border-color: var(--border-color); }
+        
+        nav { background-color: var(--nav-bg); }
+        
         .feature-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
@@ -58,9 +99,42 @@
         .delay-2 { animation-delay: 0.2s; }
         .delay-3 { animation-delay: 0.3s; }
         .delay-4 { animation-delay: 0.4s; }
+        
+        /* Theme Toggle */
+        .theme-toggle {
+            position: relative;
+            width: 56px;
+            height: 28px;
+            background: var(--bg-secondary);
+            border-radius: 14px;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        .theme-toggle-circle {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 20px;
+            height: 20px;
+            background: #2563EB;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        [data-theme="light"] .theme-toggle-circle {
+            transform: translateX(28px);
+        }
+        .theme-toggle svg {
+            width: 12px;
+            height: 12px;
+            color: white;
+        }
     </style>
 </head>
-<body class="font-sans bg-dark text-white">
+<body class="font-sans" data-theme="dark">
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-dark/90 backdrop-blur-md border-b border-white/10">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -76,6 +150,19 @@
                 <a href="#features" class="text-gray-300 hover:text-white transition">Features</a>
                 <a href="#pricing" class="text-gray-300 hover:text-white transition">Pricing</a>
                 <a href="support.html" class="text-gray-300 hover:text-white transition">Support</a>
+                
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <div class="theme-toggle-circle">
+                        <svg id="theme-icon-moon" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <svg id="theme-icon-sun" class="hidden" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                </button>
+                
                 <a href="#download" class="bg-primary hover:bg-blue-600 px-5 py-2 rounded-lg font-medium transition">Download</a>
             </div>
             <button id="mobile-menu-btn" class="md:hidden p-2">
@@ -90,6 +177,22 @@
                 <a href="#features" class="text-gray-300 hover:text-white transition">Features</a>
                 <a href="#pricing" class="text-gray-300 hover:text-white transition">Pricing</a>
                 <a href="support.html" class="text-gray-300 hover:text-white transition">Support</a>
+                
+                <!-- Mobile Theme Toggle -->
+                <div class="flex items-center justify-between py-2">
+                    <span class="text-gray-300">Theme</span>
+                    <button id="theme-toggle-mobile" class="theme-toggle" aria-label="Toggle theme">
+                        <div class="theme-toggle-circle">
+                            <svg class="theme-icon-moon-mobile" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                            </svg>
+                            <svg class="theme-icon-sun-mobile hidden" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+                
                 <a href="#download" class="bg-primary hover:bg-blue-600 px-5 py-2 rounded-lg font-medium transition text-center">Download</a>
             </div>
         </div>
@@ -512,6 +615,57 @@
     </footer>
 
     <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const moonIcon = document.getElementById('theme-icon-moon');
+        const sunIcon = document.getElementById('theme-icon-sun');
+        const body = document.body;
+
+        // Check saved theme or system preference
+        function getPreferredTheme() {
+            const saved = localStorage.getItem('theme');
+            if (saved) return saved;
+            return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+
+        function setTheme(theme) {
+            body.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            
+            // Update desktop icons
+            if (theme === 'light') {
+                moonIcon.classList.add('hidden');
+                sunIcon.classList.remove('hidden');
+            } else {
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+            
+            // Update mobile icons
+            document.querySelectorAll('.theme-icon-moon-mobile').forEach(el => {
+                el.classList.toggle('hidden', theme === 'light');
+            });
+            document.querySelectorAll('.theme-icon-sun-mobile').forEach(el => {
+                el.classList.toggle('hidden', theme === 'dark');
+            });
+        }
+
+        // Initialize theme
+        setTheme(getPreferredTheme());
+
+        // Desktop toggle
+        themeToggle.addEventListener('click', () => {
+            const current = body.getAttribute('data-theme');
+            setTheme(current === 'dark' ? 'light' : 'dark');
+        });
+
+        // Mobile toggle
+        const mobileThemeToggle = document.getElementById('theme-toggle-mobile');
+        mobileThemeToggle.addEventListener('click', () => {
+            const current = body.getAttribute('data-theme');
+            setTheme(current === 'dark' ? 'light' : 'dark');
+        });
+
         // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');

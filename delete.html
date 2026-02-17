@@ -59,6 +59,30 @@
 
             <div class="prose prose-invert max-w-none space-y-8 text-gray-300">
 
+                <!-- Grace Period Notice -->
+                <section>
+                    <div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-6">
+                        <h2 class="text-xl font-semibold text-blue-400 mb-3 flex items-center gap-2">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            7-Day Grace Period
+                        </h2>
+                        <p>
+                            When you request account deletion, your account enters a <strong class="text-white">7-day grace period</strong>.
+                            During this time:
+                        </p>
+                        <ul class="list-disc pl-6 space-y-1 mt-3">
+                            <li>Your account will be deactivated immediately</li>
+                            <li>You can cancel the deletion by signing back in within 7 days</li>
+                            <li>After 7 days, all data will be permanently deleted</li>
+                        </ul>
+                        <p class="mt-4 text-blue-300">
+                            Changed your mind? Simply sign in within 7 days to restore your account.
+                        </p>
+                    </div>
+                </section>
+
                 <!-- Important Notice -->
                 <section>
                     <div class="bg-red-500/10 border border-red-500/30 rounded-xl p-6">
@@ -66,10 +90,10 @@
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
                             </svg>
-                            Important: Account Deletion is Permanent
+                            After 7 Days: Deletion is Permanent
                         </h2>
                         <p>
-                            Deleting your account will permanently remove all your data including:
+                            Once the grace period ends, deleting your account will permanently remove all your data including:
                         </p>
                         <ul class="list-disc pl-6 space-y-1 mt-3">
                             <li>All mileage entries and trip logs</li>
@@ -79,7 +103,7 @@
                             <li>All generated reports and history</li>
                         </ul>
                         <p class="mt-4 font-medium text-red-300">
-                            This action cannot be undone. Please export your data before deleting your account if you need to keep records for tax purposes.
+                            This action cannot be undone after the grace period. Please export your data before deleting your account if you need to keep records for tax purposes.
                         </p>
                     </div>
                 </section>
@@ -270,13 +294,14 @@
 
                 <!-- Data Retention -->
                 <section>
-                    <h2 class="text-2xl font-semibold text-white mb-4">Data Retention After Deletion</h2>
+                    <h2 class="text-2xl font-semibold text-white mb-4">Data Retention Timeline</h2>
                     <p>
-                        Upon account deletion:
+                        When you request account deletion:
                     </p>
                     <ul class="list-disc pl-6 space-y-2 mt-4">
-                        <li>Your personal data is deleted from our active systems immediately</li>
-                        <li>Backup systems are purged within 30 days</li>
+                        <li><strong class="text-white">Days 1-7 (Grace Period):</strong> Account is deactivated but data is preserved. Sign in to cancel deletion.</li>
+                        <li><strong class="text-white">Day 8:</strong> Personal data is permanently deleted from our active systems</li>
+                        <li><strong class="text-white">Within 30 days:</strong> Backup systems are purged</li>
                         <li>Anonymized, non-identifiable analytics data may be retained for service improvement</li>
                         <li>We may retain certain information if required by law (e.g., transaction records for tax compliance)</li>
                     </ul>

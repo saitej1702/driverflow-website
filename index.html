@@ -14,16 +14,16 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://drivefloapp.com/">
     <meta property="og:image" content="https://drivefloapp.com/images/og-image.png">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/icon.png">
     <link rel="apple-touch-icon" href="images/icon.png">
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -42,10 +42,10 @@
             }
         }
     </script>
-    
+
     <style>
         html { scroll-behavior: smooth; }
-        
+
         /* Theme Variables */
         :root {
             --bg-primary: #0F172A;
@@ -57,7 +57,7 @@
             --border-color: rgba(255, 255, 255, 0.1);
             --nav-bg: rgba(15, 23, 42, 0.9);
         }
-        
+
         [data-theme="light"] {
             --bg-primary: #FFFFFF;
             --bg-secondary: #F8FAFC;
@@ -68,17 +68,17 @@
             --border-color: rgba(0, 0, 0, 0.1);
             --nav-bg: rgba(255, 255, 255, 0.9);
         }
-        
+
         body {
             background-color: var(--bg-primary);
             color: var(--text-primary);
             transition: background-color 0.3s ease, color 0.3s ease;
         }
-        
+
         .gradient-bg {
             background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
         }
-        
+
         .bg-dark { background-color: var(--bg-primary); }
         .bg-darkLight { background-color: var(--bg-secondary); }
         .text-white { color: var(--text-primary); }
@@ -86,9 +86,9 @@
         .text-gray-400 { color: var(--text-secondary); }
         .text-gray-500 { color: var(--text-muted); }
         .border-white\/10 { border-color: var(--border-color); }
-        
+
         nav { background-color: var(--nav-bg); }
-        
+
         .feature-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
@@ -110,12 +110,12 @@
 <body class="font-sans" data-theme="dark">
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-dark/90 backdrop-blur-md border-b border-white/10">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="max-w-6xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
             <a href="/" class="flex items-center gap-2">
-                <div class="w-10 h-10 rounded-xl overflow-hidden">
+                <div class="w-9 h-9 md:w-10 md:h-10 rounded-xl overflow-hidden">
                     <img src="images/icon.png" alt="DriveFlo" class="w-full h-full object-cover scale-125">
                 </div>
-                <span class="text-xl font-bold">DriveFlo</span>
+                <span class="text-lg md:text-xl font-bold">DriveFlo</span>
             </a>
             <div class="hidden md:flex items-center gap-8">
                 <a href="#features" class="text-gray-300 hover:text-white transition">Features</a>
@@ -141,34 +141,34 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="gradient-bg pt-32 pb-20 px-6">
+    <section class="gradient-bg pt-20 pb-10 px-4 md:pt-32 md:pb-20 md:px-6">
         <div class="max-w-6xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
                 <div class="fade-in">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                    <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-3 md:mb-6">
                         Every Mile.<br>
                         <span class="text-primary">Every Deduction.</span><br>
                         Captured.
                     </h1>
-                    <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-                        Stop guessing. Stop forgetting. DriveFlo tracks your trips and expenses 
-                        in the background—so when tax season comes, you're ready with CRA and IRS-friendly reports.
+                    <p class="text-base md:text-xl text-gray-300 mb-5 md:mb-8 leading-relaxed">
+                        Stop guessing. Stop forgetting. DriveFlo tracks your trips and expenses
+                        so when tax season comes, you're ready with CRA and IRS-friendly reports.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4" id="download">
+                    <div class="flex flex-row gap-3 items-center" id="download">
                         <!-- Google Play Button -->
                         <a href="https://play.google.com/store/apps/details?id=com.driverflow.app" target="_blank" class="inline-block hover:opacity-80 transition">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="h-14">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="h-11 md:h-14">
                         </a>
                         <!-- App Store Button (Coming Soon) -->
                         <div class="relative inline-block">
-                            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store" class="h-14 opacity-50">
-                            <span class="absolute -top-2 -right-2 bg-primary text-xs px-2 py-1 rounded-full font-medium">Soon</span>
+                            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store" class="h-11 md:h-14 opacity-50">
+                            <span class="absolute -top-2 -right-2 bg-primary text-xs px-2 py-0.5 rounded-full font-medium">Soon</span>
                         </div>
                     </div>
                 </div>
-                <div class="fade-in delay-2">
+                <!-- Phone mockup: hidden on mobile to reduce scroll -->
+                <div class="fade-in delay-2 hidden md:block">
                     <div class="relative">
-                        <!-- Phone Mockup Placeholder -->
                         <div class="bg-darkLight rounded-3xl p-4 shadow-2xl border border-white/10 mx-auto max-w-xs">
                             <div class="bg-dark rounded-2xl aspect-[9/19] flex items-center justify-center">
                                 <div class="text-center p-6">
@@ -190,255 +190,256 @@
     </section>
 
     <!-- Value Props Section -->
-    <section class="py-12 bg-darkLight border-y border-white/10">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <section class="py-6 md:py-12 bg-darkLight border-y border-white/10">
+        <div class="max-w-6xl mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-8 text-center">
                 <div class="fade-in delay-1">
-                    <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-3">
-                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-2 md:mb-3">
+                        <svg class="w-5 h-5 md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 2.829a4.978 4.978 0 01-1.414-2.83m-1.414 5.658a9 9 0 01-2.167-9.238m7.824 2.167a1 1 0 111.414 1.414m-1.414-1.414L3 3"></path>
                         </svg>
                     </div>
-                    <div class="text-white font-semibold">Works Offline</div>
-                    <div class="text-gray-500 text-sm">No signal? No problem.</div>
+                    <div class="text-white font-semibold text-sm md:text-base">Works Offline</div>
+                    <div class="text-gray-500 text-xs md:text-sm">No signal? No problem.</div>
                 </div>
                 <div class="fade-in delay-2">
-                    <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-3">
-                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-2 md:mb-3">
+                        <svg class="w-5 h-5 md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         </svg>
                     </div>
-                    <div class="text-white font-semibold">Scan Receipts</div>
-                    <div class="text-gray-500 text-sm">Snap and save instantly.</div>
+                    <div class="text-white font-semibold text-sm md:text-base">Scan Receipts</div>
+                    <div class="text-gray-500 text-xs md:text-sm">Snap and save instantly.</div>
                 </div>
                 <div class="fade-in delay-3">
-                    <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-3">
-                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-2 md:mb-3">
+                        <svg class="w-5 h-5 md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                         </svg>
                     </div>
-                    <div class="text-white font-semibold">Smart Ratio</div>
-                    <div class="text-gray-500 text-sm">Auto business-use %.</div>
+                    <div class="text-white font-semibold text-sm md:text-base">Smart Ratio</div>
+                    <div class="text-gray-500 text-xs md:text-sm">Auto business-use %.</div>
                 </div>
                 <div class="fade-in delay-4">
-                    <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-3">
-                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-2 md:mb-3">
+                        <svg class="w-5 h-5 md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                         </svg>
                     </div>
-                    <div class="text-white font-semibold">Export to PDF</div>
-                    <div class="text-gray-500 text-sm">Tax-ready reports.</div>
+                    <div class="text-white font-semibold text-sm md:text-base">Export to PDF</div>
+                    <div class="text-gray-500 text-xs md:text-sm">Tax-ready reports.</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="py-20 px-6">
+    <section id="features" class="py-10 md:py-20 px-4 md:px-6">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Everything You Need</h2>
-                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-                    Built specifically for rideshare drivers, delivery drivers, and self-employed professionals in Canada and the USA.
+            <div class="text-center mb-8 md:mb-16 fade-in">
+                <h2 class="text-2xl md:text-4xl font-bold mb-3 md:mb-4">Everything You Need</h2>
+                <p class="text-gray-400 text-sm md:text-lg max-w-2xl mx-auto">
+                    Built for rideshare drivers, delivery drivers, and self-employed professionals in Canada and the USA.
                 </p>
             </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
                 <!-- Feature 1 -->
-                <div class="feature-card bg-darkLight rounded-2xl p-6 border border-white/10 transition-all duration-300 fade-in delay-1">
-                    <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="feature-card bg-darkLight rounded-xl md:rounded-2xl p-4 md:p-6 border border-white/10 transition-all duration-300 fade-in delay-1">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-3 md:mb-4">
+                        <svg class="w-5 h-5 md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Smart Business Ratio</h3>
-                    <p class="text-gray-400">Automatically calculates your business-use percentage based on actual driving patterns.</p>
+                    <h3 class="text-sm md:text-xl font-semibold mb-1 md:mb-2">Smart Business Ratio</h3>
+                    <p class="text-gray-400 text-xs md:text-sm">Auto-calculates your business-use % from real driving patterns.</p>
                 </div>
 
                 <!-- Feature 2 -->
-                <div class="feature-card bg-darkLight rounded-2xl p-6 border border-white/10 transition-all duration-300 fade-in delay-2">
-                    <div class="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="feature-card bg-darkLight rounded-xl md:rounded-2xl p-4 md:p-6 border border-white/10 transition-all duration-300 fade-in delay-2">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-green-500/20 rounded-xl flex items-center justify-center mb-3 md:mb-4">
+                        <svg class="w-5 h-5 md:w-6 md:h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Receipt Scanning</h3>
-                    <p class="text-gray-400">Snap photos of receipts and we'll extract the details automatically. Cloud-backed storage.</p>
+                    <h3 class="text-sm md:text-xl font-semibold mb-1 md:mb-2">Receipt Scanning</h3>
+                    <p class="text-gray-400 text-xs md:text-sm">Snap receipts and we extract details automatically. Cloud-backed.</p>
                 </div>
 
                 <!-- Feature 3 -->
-                <div class="feature-card bg-darkLight rounded-2xl p-6 border border-white/10 transition-all duration-300 fade-in delay-3">
-                    <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="feature-card bg-darkLight rounded-xl md:rounded-2xl p-4 md:p-6 border border-white/10 transition-all duration-300 fade-in delay-3">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-3 md:mb-4">
+                        <svg class="w-5 h-5 md:w-6 md:h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Tax-Ready Reports</h3>
-                    <p class="text-gray-400">Export PDF and CSV reports formatted for CRA (Canada) and IRS (USA) requirements.</p>
+                    <h3 class="text-sm md:text-xl font-semibold mb-1 md:mb-2">Tax-Ready Reports</h3>
+                    <p class="text-gray-400 text-xs md:text-sm">Export PDF & CSV formatted for CRA and IRS requirements.</p>
                 </div>
 
                 <!-- Feature 4 -->
-                <div class="feature-card bg-darkLight rounded-2xl p-6 border border-white/10 transition-all duration-300 fade-in delay-1">
-                    <div class="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="feature-card bg-darkLight rounded-xl md:rounded-2xl p-4 md:p-6 border border-white/10 transition-all duration-300 fade-in delay-1">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-orange-500/20 rounded-xl flex items-center justify-center mb-3 md:mb-4">
+                        <svg class="w-5 h-5 md:w-6 md:h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Expense Tracking</h3>
-                    <p class="text-gray-400">Log fuel, maintenance, insurance, and other vehicle expenses in one place.</p>
+                    <h3 class="text-sm md:text-xl font-semibold mb-1 md:mb-2">Expense Tracking</h3>
+                    <p class="text-gray-400 text-xs md:text-sm">Log fuel, maintenance, insurance, and more in one place.</p>
                 </div>
 
                 <!-- Feature 5 -->
-                <div class="feature-card bg-darkLight rounded-2xl p-6 border border-white/10 transition-all duration-300 fade-in delay-2">
-                    <div class="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="feature-card bg-darkLight rounded-xl md:rounded-2xl p-4 md:p-6 border border-white/10 transition-all duration-300 fade-in delay-2">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-3 md:mb-4">
+                        <svg class="w-5 h-5 md:w-6 md:h-6 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Works Offline</h3>
-                    <p class="text-gray-400">Log trips and expenses even without internet. Everything syncs when you're back online.</p>
+                    <h3 class="text-sm md:text-xl font-semibold mb-1 md:mb-2">Works Offline</h3>
+                    <p class="text-gray-400 text-xs md:text-sm">Log trips without internet. Everything syncs when you're back online.</p>
                 </div>
 
                 <!-- Feature 6 -->
-                <div class="feature-card bg-darkLight rounded-2xl p-6 border border-white/10 transition-all duration-300 fade-in delay-3">
-                    <div class="w-12 h-12 bg-pink-500/20 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="feature-card bg-darkLight rounded-xl md:rounded-2xl p-4 md:p-6 border border-white/10 transition-all duration-300 fade-in delay-3">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-pink-500/20 rounded-xl flex items-center justify-center mb-3 md:mb-4">
+                        <svg class="w-5 h-5 md:w-6 md:h-6 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Secure & Private</h3>
-                    <p class="text-gray-400">Bank-level encryption. Your data is yours - we never sell your information.</p>
+                    <h3 class="text-sm md:text-xl font-semibold mb-1 md:mb-2">Secure & Private</h3>
+                    <p class="text-gray-400 text-xs md:text-sm">Bank-level encryption. We never sell your data.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="py-20 px-6 bg-darkLight">
+    <section id="pricing" class="py-10 md:py-20 px-4 md:px-6 bg-darkLight">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Simple Pricing</h2>
-                <p class="text-gray-400 text-lg mb-8">Start free, upgrade when you need more.</p>
-                
+            <div class="text-center mb-6 md:mb-12 fade-in">
+                <h2 class="text-2xl md:text-4xl font-bold mb-3 md:mb-4">Simple Pricing</h2>
+                <p class="text-gray-400 text-sm md:text-lg mb-5 md:mb-8">Start free, upgrade when you need more.</p>
+
                 <!-- Billing Toggle -->
                 <div class="inline-flex items-center bg-dark rounded-full p-1 border border-white/10">
-                    <button id="monthly-tab" class="px-6 py-2 rounded-full text-sm font-medium transition-all bg-primary text-white">
+                    <button id="monthly-tab" class="px-5 md:px-6 py-2 rounded-full text-sm font-medium transition-all bg-primary text-white">
                         Monthly
                     </button>
-                    <button id="annual-tab" class="px-6 py-2 rounded-full text-sm font-medium transition-all text-gray-400 hover:text-white">
+                    <button id="annual-tab" class="px-5 md:px-6 py-2 rounded-full text-sm font-medium transition-all text-gray-400 hover:text-white">
                         Annual <span class="text-green-400 ml-1">Save 25%</span>
                     </button>
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <!-- Mobile: Pro first, desktop: Free | Pro | Why Go Pro -->
+            <div class="grid md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
                 <!-- Free Plan -->
-                <div class="bg-dark rounded-2xl p-8 border border-white/10 fade-in delay-1">
-                    <div class="text-lg font-medium text-gray-400 mb-2">Free</div>
-                    <div class="text-4xl font-bold mb-2">$0<span class="text-lg font-normal text-gray-400">/forever</span></div>
-                    <div class="text-sm text-gray-500 mb-6 h-5">No credit card required</div>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-dark rounded-2xl p-5 md:p-8 border border-white/10 fade-in delay-1 order-2 md:order-1">
+                    <div class="text-base md:text-lg font-medium text-gray-400 mb-1 md:mb-2">Free</div>
+                    <div class="text-3xl md:text-4xl font-bold mb-1 md:mb-2">$0<span class="text-base md:text-lg font-normal text-gray-400">/forever</span></div>
+                    <div class="text-sm text-gray-500 mb-4 md:mb-6 h-5">No credit card required</div>
+                    <ul class="space-y-3 md:space-y-4 mb-5 md:mb-8">
+                        <li class="flex items-center gap-2 md:gap-3">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                             </svg>
-                            <span class="text-gray-300">Basic mileage logging</span>
+                            <span class="text-gray-300 text-sm md:text-base">Basic mileage logging</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <li class="flex items-center gap-2 md:gap-3">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                             </svg>
-                            <span class="text-gray-300">Expense tracking</span>
+                            <span class="text-gray-300 text-sm md:text-base">Expense tracking</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <li class="flex items-center gap-2 md:gap-3">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                             </svg>
-                            <span class="text-gray-300">Offline mode</span>
+                            <span class="text-gray-300 text-sm md:text-base">Offline mode</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <li class="flex items-center gap-2 md:gap-3">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
-                            <span class="text-gray-500">Tax reports</span>
+                            <span class="text-gray-500 text-sm md:text-base">Tax reports</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <li class="flex items-center gap-2 md:gap-3">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
-                            <span class="text-gray-500">Receipt scanning</span>
+                            <span class="text-gray-500 text-sm md:text-base">Receipt scanning</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <li class="flex items-center gap-2 md:gap-3">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
-                            <span class="text-gray-500">Cloud backup</span>
+                            <span class="text-gray-500 text-sm md:text-base">Cloud backup</span>
                         </li>
                     </ul>
-                    <a href="#download" class="block w-full py-3 text-center border border-white/20 rounded-xl hover:bg-white/5 transition font-medium">
+                    <a href="#download" class="block w-full py-3 text-center border border-white/20 rounded-xl hover:bg-white/5 transition font-medium text-sm md:text-base">
                         Get Started Free
                     </a>
                 </div>
 
-                <!-- Pro Plan -->
-                <div class="bg-dark rounded-2xl p-8 border-2 border-primary relative fade-in delay-2 transform md:scale-105">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary px-4 py-1 rounded-full text-sm font-medium">
+                <!-- Pro Plan — first on mobile -->
+                <div class="bg-dark rounded-2xl p-5 md:p-8 border-2 border-primary relative fade-in delay-2 md:transform md:scale-105 order-1 md:order-2">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary px-4 py-1 rounded-full text-sm font-medium whitespace-nowrap">
                         Most Popular
                     </div>
-                    <div class="text-lg font-medium text-primary mb-2">Pro</div>
-                    <div class="text-4xl font-bold mb-2" id="pro-price">
-                        <span id="pro-price-value">$4.99</span><span class="text-lg font-normal text-gray-400" id="pro-price-period">/month</span>
+                    <div class="text-base md:text-lg font-medium text-primary mb-1 md:mb-2">Pro</div>
+                    <div class="text-3xl md:text-4xl font-bold mb-1 md:mb-2" id="pro-price">
+                        <span id="pro-price-value">$4.99</span><span class="text-base md:text-lg font-normal text-gray-400" id="pro-price-period">/month</span>
                     </div>
-                    <div class="text-sm mb-6 h-5" id="pro-savings">
+                    <div class="text-sm mb-4 md:mb-6 h-5" id="pro-savings">
                         <span class="text-gray-500">Billed monthly</span>
                     </div>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <ul class="space-y-3 md:space-y-4 mb-5 md:mb-8">
+                        <li class="flex items-center gap-2 md:gap-3">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                             </svg>
-                            <span class="text-gray-300">Everything in Free</span>
+                            <span class="text-gray-300 text-sm md:text-base">Everything in Free</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <li class="flex items-center gap-2 md:gap-3">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                             </svg>
-                            <span class="text-gray-300">Smart business ratio</span>
+                            <span class="text-gray-300 text-sm md:text-base">Smart business ratio</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <li class="flex items-center gap-2 md:gap-3">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                             </svg>
-                            <span class="text-gray-300">Tax-ready PDF & CSV exports</span>
+                            <span class="text-gray-300 text-sm md:text-base">Tax-ready PDF & CSV exports</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <li class="flex items-center gap-2 md:gap-3">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                             </svg>
-                            <span class="text-gray-300">Unlimited receipt storage</span>
+                            <span class="text-gray-300 text-sm md:text-base">Unlimited receipt storage</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <li class="flex items-center gap-2 md:gap-3">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                             </svg>
-                            <span class="text-gray-300">Audit protection score</span>
+                            <span class="text-gray-300 text-sm md:text-base">Audit protection score</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <li class="flex items-center gap-2 md:gap-3">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                             </svg>
-                            <span class="text-gray-300">Priority support</span>
+                            <span class="text-gray-300 text-sm md:text-base">Priority support</span>
                         </li>
                     </ul>
-                    <a href="#download" class="block w-full py-3 text-center bg-primary hover:bg-blue-600 rounded-xl transition font-medium">
+                    <a href="#download" class="block w-full py-3 text-center bg-primary hover:bg-blue-600 rounded-xl transition font-medium text-sm md:text-base">
                         Start 7-Day Free Trial
                     </a>
                 </div>
 
-                <!-- Pro Annual Highlight (visible on Annual tab) -->
-                <div class="bg-dark rounded-2xl p-8 border border-white/10 fade-in delay-3">
+                <!-- Why Go Pro — hidden on mobile -->
+                <div class="bg-dark rounded-2xl p-5 md:p-8 border border-white/10 fade-in delay-3 order-3 hidden md:block">
                     <div class="text-lg font-medium text-gray-400 mb-2">Why Go Pro?</div>
                     <div class="text-2xl font-bold mb-4 text-white">Worth Every Dollar</div>
                     <div class="space-y-4">
@@ -486,35 +487,35 @@
                 </div>
             </div>
 
-            <p class="text-center text-gray-500 text-sm mt-8" id="pricing-note">
+            <p class="text-center text-gray-500 text-sm mt-6 md:mt-8" id="pricing-note">
                 <span id="country-flag"></span> Prices shown in <span id="currency-name">USD</span>
             </p>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 px-6">
+    <section class="py-10 md:py-20 px-4 md:px-6">
         <div class="max-w-4xl mx-auto text-center fade-in">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Maximize Your Deductions?</h2>
-            <p class="text-gray-400 text-lg mb-8">Join thousands of drivers who save money on taxes with DriveFlo.</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <h2 class="text-2xl md:text-4xl font-bold mb-3 md:mb-4">Ready to Maximize Your Deductions?</h2>
+            <p class="text-gray-400 text-sm md:text-lg mb-5 md:mb-8">Join thousands of drivers who save money on taxes with DriveFlo.</p>
+            <div class="flex flex-row gap-3 justify-center items-center">
                 <a href="https://play.google.com/store/apps/details?id=com.driverflow.app" target="_blank" class="inline-block hover:opacity-80 transition">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="h-14">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="h-11 md:h-14">
                 </a>
                 <div class="relative inline-block">
-                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store" class="h-14 opacity-50">
-                    <span class="absolute -top-2 -right-2 bg-primary text-xs px-2 py-1 rounded-full font-medium">Soon</span>
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store" class="h-11 md:h-14 opacity-50">
+                    <span class="absolute -top-2 -right-2 bg-primary text-xs px-2 py-0.5 rounded-full font-medium">Soon</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-darkLight border-t border-white/10 py-12 px-6">
+    <footer class="bg-darkLight border-t border-white/10 py-8 md:py-12 px-4 md:px-6">
         <div class="max-w-6xl mx-auto">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <div class="flex items-center gap-2 mb-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-6 md:mb-8">
+                <div class="col-span-2 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-3 md:mb-4">
                         <div class="w-8 h-8 rounded-lg overflow-hidden">
                             <img src="images/icon.png" alt="DriveFlo" class="w-full h-full object-cover scale-125">
                         </div>
@@ -523,29 +524,29 @@
                     <p class="text-gray-400 text-sm">Smart mileage tracking for tax-savvy drivers.</p>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">Product</h4>
-                    <ul class="space-y-2 text-gray-400">
+                    <h4 class="font-semibold mb-3 md:mb-4 text-sm md:text-base">Product</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
                         <li><a href="#features" class="hover:text-white transition">Features</a></li>
                         <li><a href="#pricing" class="hover:text-white transition">Pricing</a></li>
                         <li><a href="#download" class="hover:text-white transition">Download</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">Support</h4>
-                    <ul class="space-y-2 text-gray-400">
+                    <h4 class="font-semibold mb-3 md:mb-4 text-sm md:text-base">Support</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
                         <li><a href="support.html" class="hover:text-white transition">FAQ</a></li>
                         <li><a href="mailto:support@drivefloapp.com" class="hover:text-white transition">Contact</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">Legal</h4>
-                    <ul class="space-y-2 text-gray-400">
+                    <h4 class="font-semibold mb-3 md:mb-4 text-sm md:text-base">Legal</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
                         <li><a href="privacy.html" class="hover:text-white transition">Privacy Policy</a></li>
                         <li><a href="terms.html" class="hover:text-white transition">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="border-t border-white/10 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-2 md:gap-4">
                 <p class="text-gray-500 text-sm">&copy; 2026 DriveFlo. All rights reserved.</p>
                 <p class="text-gray-500 text-sm">Made with ❤️ for drivers in 🇨🇦 Canada & 🇺🇸 USA</p>
             </div>

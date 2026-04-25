@@ -581,17 +581,18 @@
             observer.observe(el);
         });
 
-        // Geolocation-based pricing
+        // Geolocation-based pricing — all regions display USD base price
+        // (Google Play / RevenueCat handle the actual local-currency conversion at checkout)
         const pricingData = {
-            CA: { 
-                monthly: '6.99',
-                monthlyFull: '83.88',
-                yearly: '64.99',
-                currency: 'CAD',
+            CA: {
+                monthly: '4.99',
+                monthlyFull: '59.88',
+                yearly: '44.99',
+                currency: 'USD',
                 symbol: '$',
                 flag: '🇨🇦'
             },
-            US: { 
+            US: {
                 monthly: '4.99',
                 monthlyFull: '59.88',
                 yearly: '44.99',
@@ -599,7 +600,7 @@
                 symbol: '$',
                 flag: '🇺🇸'
             },
-            default: { 
+            default: {
                 monthly: '4.99',
                 monthlyFull: '59.88',
                 yearly: '44.99',
@@ -617,10 +618,10 @@
             const pricePeriod = document.getElementById('pro-price-period');
             const savingsEl = document.getElementById('pro-savings');
             const annualSavingsEl = document.getElementById('annual-savings');
-            
+
             const symbol = currentPricing.symbol;
             const savings = (parseFloat(currentPricing.monthlyFull) - parseFloat(currentPricing.yearly)).toFixed(2);
-            
+
             if (isAnnual) {
                 priceValue.textContent = `${symbol}${currentPricing.yearly}`;
                 pricePeriod.textContent = '/year';
@@ -630,7 +631,7 @@
                 pricePeriod.textContent = '/month';
                 savingsEl.innerHTML = `<span class="text-gray-500">Billed monthly</span>`;
             }
-            
+
             annualSavingsEl.textContent = `Save ${symbol}${savings}/${currentPricing.currency}`;
             document.getElementById('currency-name').textContent = currentPricing.currency;
             document.getElementById('country-flag').textContent = currentPricing.flag + ' ';
@@ -663,10 +664,10 @@
                 const response = await fetch('https://ipapi.co/json/');
                 const data = await response.json();
                 const countryCode = data.country_code || 'US';
-                
+
                 currentPricing = pricingData[countryCode] || pricingData.default;
                 updatePricingDisplay();
-                
+
             } catch (error) {
                 console.log('Geolocation unavailable, using default pricing');
                 updatePricingDisplay();

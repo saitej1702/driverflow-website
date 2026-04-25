@@ -190,12 +190,12 @@
                                     </div>
                                 </div>
                                 <!-- Dot indicators -->
-                                <div class="absolute bottom-2 left-0 right-0 flex justify-center gap-1">
-                                    <span class="carousel-dot w-1.5 h-1.5 rounded-full bg-white transition-opacity" data-index="0"></span>
-                                    <span class="carousel-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-opacity" data-index="1"></span>
-                                    <span class="carousel-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-opacity" data-index="2"></span>
-                                    <span class="carousel-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-opacity" data-index="3"></span>
-                                    <span class="carousel-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-opacity" data-index="4"></span>
+                                <div class="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 z-10">
+                                    <button class="carousel-dot w-2 h-2 rounded-full bg-primary transition-all cursor-pointer" data-index="0" aria-label="Go to slide 1"></button>
+                                    <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 transition-all cursor-pointer" data-index="1" aria-label="Go to slide 2"></button>
+                                    <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 transition-all cursor-pointer" data-index="2" aria-label="Go to slide 3"></button>
+                                    <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 transition-all cursor-pointer" data-index="3" aria-label="Go to slide 4"></button>
+                                    <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 transition-all cursor-pointer" data-index="4" aria-label="Go to slide 5"></button>
                                 </div>
                             </div>
                         </div>
@@ -708,8 +708,10 @@
             current = (index + total) % total;
             track.style.transform = `translateX(-${current * 100}%)`;
             dots.forEach((d, i) => {
-                d.classList.toggle('bg-white', i === current);
-                d.classList.toggle('bg-white/40', i !== current);
+                d.classList.toggle('bg-primary', i === current);
+                d.classList.toggle('w-4', i === current);
+                d.classList.toggle('bg-white/50', i !== current);
+                d.classList.toggle('w-2', i !== current);
             });
         }
 

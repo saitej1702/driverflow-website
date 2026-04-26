@@ -463,23 +463,68 @@
         </div>
     </section>
 
-    <!-- Testimonial -->
+    <!-- Testimonials -->
     <section class="py-10 md:py-16 px-4 md:px-6">
-        <div class="max-w-2xl mx-auto">
-            <div class="quote-card rounded-2xl p-6 md:p-8 fade-in">
-                <svg class="w-8 h-8 text-primary/50 mb-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                </svg>
-                <p class="text-white/75 text-base md:text-lg leading-relaxed mb-5 italic">
-                    "Finally an app that makes sense for drivers. I used to dread tax season — now I just hit export and I'm done. The business-use ratio alone saved me hours."
-                </p>
-                <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center text-xs font-bold">M</div>
-                    <div>
-                        <div class="text-sm font-semibold">Marcus T.</div>
-                        <div class="text-white/40 text-xs">Uber & DoorDash driver · Toronto, ON</div>
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-8 fade-in">
+                <div class="section-label">Testimonials</div>
+                <h2 class="text-2xl md:text-3xl font-black tracking-tight">Drivers love it</h2>
+            </div>
+            <!-- Slider: swipeable on mobile, grid on desktop -->
+            <div class="relative">
+                <div id="testimonial-track" class="flex md:grid md:grid-cols-3 gap-4 overflow-x-auto md:overflow-visible pb-4 md:pb-0" style="-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none">
+
+                    <!-- Testimonial 1 -->
+                    <div class="quote-card rounded-2xl p-5 flex-shrink-0 w-[82vw] md:w-auto fade-in delay-1" style="scroll-snap-align:start">
+                        <div class="text-yellow-400 text-sm mb-3">★★★★★</div>
+                        <p class="text-white/70 text-sm leading-relaxed mb-5 italic">
+                            "Finally an app that makes sense for drivers. I used to dread tax season — now I just hit export and I'm done. The business-use ratio alone saved me hours."
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center text-xs font-bold flex-shrink-0">M</div>
+                            <div>
+                                <div class="text-sm font-semibold">Marcus T.</div>
+                                <div class="text-white/35 text-xs">Uber & DoorDash · Toronto, ON</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="ml-auto text-yellow-400 text-sm">★★★★★</div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="quote-card rounded-2xl p-5 flex-shrink-0 w-[82vw] md:w-auto fade-in delay-2" style="scroll-snap-align:start">
+                        <div class="text-yellow-400 text-sm mb-3">★★★★★</div>
+                        <p class="text-white/70 text-sm leading-relaxed mb-5 italic">
+                            "I drive for Lyft and Instacart full time. Before DriveFlo I was keeping a spreadsheet — what a nightmare. Now everything's tracked automatically and my accountant is happy."
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-pink-400 flex items-center justify-center text-xs font-bold flex-shrink-0">J</div>
+                            <div>
+                                <div class="text-sm font-semibold">Jessica R.</div>
+                                <div class="text-white/35 text-xs">Lyft & Instacart · Atlanta, GA</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="quote-card rounded-2xl p-5 flex-shrink-0 w-[82vw] md:w-auto fade-in delay-3" style="scroll-snap-align:start">
+                        <div class="text-yellow-400 text-sm mb-3">★★★★★</div>
+                        <p class="text-white/70 text-sm leading-relaxed mb-5 italic">
+                            "As a freelance contractor I drive constantly for site visits. DriveFlo makes CRA compliance straightforward — the PDF report is exactly what my accountant asks for every year."
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-yellow-400 flex items-center justify-center text-xs font-bold flex-shrink-0">R</div>
+                            <div>
+                                <div class="text-sm font-semibold">Raj P.</div>
+                                <div class="text-white/35 text-xs">Freelance Contractor · Vancouver, BC</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Scroll dots (mobile only) -->
+                <div class="flex justify-center gap-1.5 mt-4 md:hidden" id="testimonial-dots">
+                    <span class="t-dot w-4 h-1.5 rounded-full bg-primary transition-all"></span>
+                    <span class="t-dot w-1.5 h-1.5 rounded-full bg-white/25 transition-all"></span>
+                    <span class="t-dot w-1.5 h-1.5 rounded-full bg-white/25 transition-all"></span>
                 </div>
             </div>
         </div>
@@ -751,6 +796,21 @@
         updateSlideWidths();
         goTo(0);
         startAutoplay();
+
+        // Testimonial scroll dots
+        var tTrack = document.getElementById('testimonial-track');
+        var tDots = document.querySelectorAll('.t-dot');
+        if (tTrack && tDots.length) {
+            tTrack.addEventListener('scroll', function() {
+                var idx = Math.round(tTrack.scrollLeft / tTrack.offsetWidth);
+                tDots.forEach(function(d, i) {
+                    d.classList.toggle('bg-primary', i === idx);
+                    d.classList.toggle('w-4', i === idx);
+                    d.classList.toggle('bg-white/25', i !== idx);
+                    d.classList.toggle('w-1.5', i !== idx);
+                });
+            }, { passive: true });
+        }
     </script>
 </body>
 </html>
